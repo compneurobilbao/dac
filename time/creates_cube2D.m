@@ -3,23 +3,17 @@
 % Jesus M Cortes, Ikerbasque & Biocruces
 % March 10, 2016
 %
-% Necessary function to run simula2D.m
+% Necessary function to run main.m
 
 
-function [cube] = creates_cube2D(L,H,C)
+function [cube] = creates_cube2D(L)
 
 cube=zeros(L,L);
-cont=0;
 
-while (cont<H)
-    x=floor(rand(1,1).*(L))+1;
-    y=floor(rand(1,1).*(L))+1;
-    c=floor(rand(1,1).*(C))+1;
+x=floor(L/2);
+y=floor(L/2);
+c=1;
 
-    if cube(x,y) ~= 0
-    else
-        cube(x,y)=c;
-        cont=cont+1;    
-    end
-end
+cube(x,y)=c;
+
 end

@@ -10,40 +10,57 @@ clear all;
 clc;
 
 
-S=9;        % scale, odd number
+S=15;        % scale, odd number
 L=3*S;      % cube side 
-t=100;  % 500, number of max heterogeneous blocks which define ITH
-dH=5;       % 5, H step
+t=100;      % 100, number of timesteps
 
 max_C=4;  % ITH types
-max_trials=5;  % 500, for each value of H, we apply separately each strategy N=max_trials and compute mean +- standard deviation
-max_tumor_number=2;  % 15, also averaging over different tumors
-heteregeneity_class='regional';  %'random' or 'regional'
+max_trials=1;  % 500, for each value of H, we apply separately each strategy N=max_trials and compute mean +- standard deviation
+max_tumor_number=1;  % 15, also averaging over different tumors
+tumor_evolution='linear';  %'random' or 'regional'
 
 for tumor_number=1:max_tumor_number
-    tumor_number
     
-    str_output_file=strcat('output_heteregeneity_',heteregeneity_class,'_tumor',num2str(tumor_number),'.txt');
+    str_output_file=strcat('output_heteregeneity_',tumor_evolution,'_tumor',num2str(tumor_number),'.txt');
     output_file=fopen(str_output_file,'w');
     
-    [cube] = creates_cube2D(L);
+    cube = creates_cube2D(L);
+    
+    if (strcmp(tumor_evolution,'linear'))
+        colors = 2:max_C;
+        poisson_lambda = t/(max_C+1);
+        t_aux = 0;
+    end
+                
     
     for timepoint=1:t
 
         % creates an heteregeneous cube with ITH given by max_H
         % and ITH types  equal to C
         
-        if (strcmp(heteregeneity_class,'linear'))
-            [cube] = creates_random_ITH_cube2D(L,H,max_C);
-        elseif (strcmp(heteregeneity_class,'branch'))
-            [cube] = creates_regional_ITH_cube2D(L,H,max_C);
-        elseif (strcmp(heteregeneity_class,'neutral'))
-            [cube] = creates_regional_ITH_cube2D(L,H,max_C);
-        else (strcmp(heteregeneity_class,'punctuated'))
-            [cube] = creates_regional_ITH_cube2D(L,H,max_C);
+        if (strcmp(tumor_evolution,'linear'))
+            if poissrnd(t_aux) > poisson_lambda && ~isempty(colors)
+                t_aux = 0;
+                new_color = colors(1);
+                colors(1) = [];
+                cube = grow_linear(cube,new_color);
+            else
+                t_aux = t_aux + 1;
+                cube = grow_linear(cube,0);
+            end
+            
+            
+            
+            
+        elseif (strcmp(tumor_evolution,'branch'))
+            
+        elseif (strcmp(tumor_evolution,'neutral'))
+            
+        else % 'punctuated'
+            
         end
-        % repeating max_trials times same sampling strategy
         
+        % repeating max_trials times same sampling strategy
         x=zeros(max_trials,2*max_C+1);
         for  trials=1:max_trials
             out_rp=zeros(max_C,1);
@@ -104,7 +121,7 @@ for H=1:dH:max_H
     dac2=zeros(max_C,1);
     
     for tumor_number=1:max_tumor_number
-        str_output_file=strcat('output_heteregeneity_',heteregeneity_class,'_tumor',num2str(tumor_number),'.txt');
+        str_output_file=strcat('output_heteregeneity_',tumor_evolution,'_tumor',num2str(tumor_number),'.txt');
         x=load(str_output_file);
 
         for c=1:max_C
