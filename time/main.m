@@ -30,8 +30,14 @@ for tumor_number=1:max_tumor_number
         colors = 2:max_C;
         poisson_lambda = t/(max_C+1);
         t_aux = 0;
+    elseif (strcmp(tumor_evolution,'branch'))
+        appearance_ratio = 1/(t/20); % it appears 5 times in mean
+        record = [floor(L/2) floor(L/2) 1 0]; % record = [x y color growing_step]
+    elseif (strcmp(tumor_evolution,'neutral'))
+        appearance_ratio = 1/(t/50); % it appears 50 of the timesteps
+    else % 'punctual'
     end
-                
+
     
     for timepoint=1:t
 
@@ -48,12 +54,18 @@ for tumor_number=1:max_tumor_number
                 t_aux = t_aux + 1;
                 cube = grow_linear(cube,0);
             end
-            
-            
-            
-            
         elseif (strcmp(tumor_evolution,'branch'))
+            if appearance_ratio > rand(1,1)
+                c=floor(rand(1,1).*(max_C))+1;
+                [cube, record] = grow_branch(cube,timepoint/t,c, record);
+            else
+                [cube, record] = grow_branch(cube,timepoint/t,0, record);
+            end
             
+            
+            
+            
+            !7
         elseif (strcmp(tumor_evolution,'neutral'))
             
         else % 'punctuated'
