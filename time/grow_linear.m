@@ -9,6 +9,7 @@
 function [cube] = grow_linear(cube,new_color)
 
 L = size(cube,1);
+grow_rate = 3;
 
 colors = unique(cube);
 if colors(1) == 0
@@ -20,28 +21,28 @@ for idx=1:length(colors)
     value = colors(idx);
     [x,y] = find(cube==value);
     
-    if max(x) == L
+    if (max(x) + grow_rate) > L
         max_x = L;
     else
-        max_x = max(x)+1;
+        max_x = max(x)+grow_rate;
     end
     
-    if max(y) == L
+    if (max(y) + grow_rate) > L
         max_y = L;
     else
-        max_y = max(y)+1;
+        max_y = max(y)+grow_rate;
     end
     
-    if min(x) == 1
+    if (min(x) - grow_rate) < 1
         min_x = 1;
     else
-        min_x = min(x)-1;
+        min_x = min(x)-grow_rate;
     end
     
-    if min(y) == 1
+    if (min(y) - grow_rate) < 1
         min_y = 1;
     else
-        min_y = min(y)-1;
+        min_y = min(y)-grow_rate;
     end
     
     pixels = combvec(min_x:max_x,min_y:max_y);
@@ -57,8 +58,8 @@ end
    
     
 if new_color ~= 0
-    x=floor(rand(1,1).*(L))+1;
-    y=floor(rand(1,1).*(L))+1;
+    x=floor(L/2);
+    y=floor(L/2);
     cube(x,y)=new_color;
 end
 

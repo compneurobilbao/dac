@@ -47,7 +47,11 @@ for tumor_number=1:max_tumor_number
         % and ITH types  equal to C
         
         if (strcmp(tumor_evolution,'linear'))
-            if poissrnd(t_aux) > poisson_lambda && ~isempty(colors)
+            colors = unique(cube);
+            if colors(1) == 0
+                colors(1) = [];
+            end
+            if poissrnd(t_aux) > poisson_lambda && ~isempty(colors) && length(colors) < 2
                 t_aux = 0;
                 new_color = colors(1);
                 colors(1) = [];

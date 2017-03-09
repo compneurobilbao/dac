@@ -36,7 +36,8 @@ for timepoint=1:t
 % and ITH types  equal to C
 
     if (strcmp(tumor_evolution,'linear'))
-        if poissrnd(t_aux) > poisson_lambda && ~isempty(colors)
+        color_cube = unique(cube);
+        if poissrnd(t_aux) > poisson_lambda && ~isempty(colors) && length(color_cube) < 2
             t_aux = 0;
             new_color = colors(1);
             colors(1) = [];
