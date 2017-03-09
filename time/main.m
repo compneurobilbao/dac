@@ -37,6 +37,7 @@ for tumor_number=1:max_tumor_number
         appearance_ratio = 1/(t/100); % it appears 50 times in mean
         record = [floor(L/2) floor(L/2) 1 0]; % record = [x y color growing_step]
     else % 'punctuated'
+        colors = 2:max_C;
     end
 
     
@@ -71,7 +72,13 @@ for tumor_number=1:max_tumor_number
             end
             
         else % 'punctuated'
-            
+            if ~isempty(colors) && mod(timepoint,3)
+                new_color = colors(1);
+                colors(1) = [];
+                cube = grow_punctuated(cube,new_color);
+            else
+                cube = grow_punctuated(cube,0);
+            end
         end
         
         % repeating max_trials times same sampling strategy

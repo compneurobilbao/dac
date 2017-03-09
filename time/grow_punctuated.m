@@ -13,8 +13,9 @@ L = size(cube,1);
 colors = unique(cube);
 if colors(1) == 0
     colors(1) = [];
+else
+    return
 end
-colors = fliplr(colors');
 
 for idx=1:length(colors)
     value = colors(idx);
