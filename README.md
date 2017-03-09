@@ -8,7 +8,6 @@ A divide-and-conquer strategy in tumor sampling enhances detection of intratumor
 - Linear:
   - Random:
   
-    ![](https://github.com/compneurobilbao/dac/blob/master/time/linear_random.gif)
   - Normal:
   
     ![](https://github.com/compneurobilbao/dac/blob/master/time/linear.gif)
@@ -18,5 +17,10 @@ A divide-and-conquer strategy in tumor sampling enhances detection of intratumor
     
 - Neutral:
 
+    ![](https://github.com/compneurobilbao/dac/blob/master/time/neutral.gif)
+
 - Punctuated:
+
+    ![](https://github.com/compneurobilbao/dac/blob/master/time/punctuated.gif)
+
 
