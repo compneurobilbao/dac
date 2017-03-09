@@ -10,17 +10,17 @@ clear all;
 clc;
 
 
-S=15;        % scale, odd number
+S=33;        % scale, odd number
 L=3*S;      % cube side 
 t=100;      % 100, number of timesteps
 
 max_C=4;  % ITH types
-max_trials=1;  % 500, for each value of H, we apply separately each strategy N=max_trials and compute mean +- standard deviation
-max_tumor_number=1;  % 15, also averaging over different tumors
-tumor_evolution='neutral';  %'random' or 'regional'
+max_trials=500;  % 500, for each value of H, we apply separately each strategy N=max_trials and compute mean +- standard deviation
+max_tumor_number=15;  % 15, also averaging over different tumors
+tumor_evolution='linear';  %'random' or 'regional'
 
 for tumor_number=1:max_tumor_number
-    
+    tumor_number
     str_output_file=strcat('output_heteregeneity_',tumor_evolution,'_tumor',num2str(tumor_number),'.txt');
     output_file=fopen(str_output_file,'w');
     
@@ -115,7 +115,7 @@ for tumor_number=1:max_tumor_number
                 x(trials,1+max_C+c)=out_dac(c);
             end
         end
-        fprintf(output_file,'%f  ',H);
+        fprintf(output_file,'%f  ',timepoint);
         
         for c=1:max_C
             mean_rp=mean(x(:,1+c));
@@ -130,14 +130,14 @@ for tumor_number=1:max_tumor_number
 end
 
 
-mean_rp=zeros(max_H/dH,max_C);
-var_rp=zeros(max_H/dH,max_C);
+mean_rp=zeros(t/1,max_C);
+var_rp=zeros(t/1,max_C);
 
-mean_dac=zeros(max_H/dH,max_C);
-var_dac=zeros(max_H/dH,max_C);
+mean_dac=zeros(t/1,max_C);
+var_dac=zeros(t/1,max_C);
 
 i=0;
-for H=1:dH:max_H
+for timepoint=1:t
     i=i+1;
     
     rp1=zeros(max_C,1);
@@ -170,7 +170,7 @@ end
 
 dim=size(mean_rp,1);
 data=zeros(dim,1+4*max_C);
-data(:,1)=(1:dH:max_H)'.*(100./(L*L));  % 2D, percentage of heteregenous density
+data(:,1)=(1:t)'.*(100./(L*L));  % 2D, percentage of heteregenous density
 for c=1:max_C
     data(:,4*(c-1)+2)=mean_rp(:,c).*100;
     data(:,4*(c-1)+3)=var_rp(:,c).*100.*100;
