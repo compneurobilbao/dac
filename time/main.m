@@ -17,7 +17,7 @@ t=100;      % 100, number of timesteps
 max_C=4;  % ITH types
 max_trials=1;  % 500, for each value of H, we apply separately each strategy N=max_trials and compute mean +- standard deviation
 max_tumor_number=1;  % 15, also averaging over different tumors
-tumor_evolution='linear';  %'random' or 'regional'
+tumor_evolution='neutral';  %'random' or 'regional'
 
 for tumor_number=1:max_tumor_number
     
@@ -34,8 +34,9 @@ for tumor_number=1:max_tumor_number
         appearance_ratio = 1/(t/20); % it appears 5 times in mean
         record = [floor(L/2) floor(L/2) 1 0]; % record = [x y color growing_step]
     elseif (strcmp(tumor_evolution,'neutral'))
-        appearance_ratio = 1/(t/50); % it appears 50 of the timesteps
-    else % 'punctual'
+        appearance_ratio = 1/(t/100); % it appears 50 times in mean
+        record = [floor(L/2) floor(L/2) 1 0]; % record = [x y color growing_step]
+    else % 'punctuated'
     end
 
     
@@ -61,12 +62,13 @@ for tumor_number=1:max_tumor_number
             else
                 [cube, record] = grow_branch(cube,timepoint/t,0, record);
             end
-            
-            
-            
-            
-            !7
         elseif (strcmp(tumor_evolution,'neutral'))
+            if appearance_ratio > rand(1,1)
+                c=floor(rand(1,1).*(max_C))+1;
+                [cube, record] = grow_neutral(cube,timepoint/t,c, record);
+            else
+                [cube, record] = grow_neutral(cube,timepoint/t,0, record);
+            end
             
         else % 'punctuated'
             
