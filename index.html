@@ -16,6 +16,18 @@
 <script src="js/THREEx.FullScreen.js"></script>
 <script src="js/THREEx.WindowResize.js"></script>
 
+<!-- load fonts -->
+<script src="fonts/gentilis_bold.typeface.js"></script>
+<script src="fonts/gentilis_regular.typeface.js"></script>
+<script src="fonts/optimer_bold.typeface.js"></script>
+<script src="fonts/optimer_regular.typeface.js"></script>
+<script src="fonts/helvetiker_bold.typeface.js"></script>
+<script src="fonts/helvetiker_regular.typeface.js"></script>
+<script src="fonts/droid_sans_regular.typeface.js"></script>
+<script src="fonts/droid_sans_bold.typeface.js"></script>
+<script src="fonts/droid_serif_regular.typeface.js"></script>
+<script src="fonts/droid_serif_bold.typeface.js"></script>
+
 <!-- jQuery code to display an information button and box when clicked. -->
 <script src="js/jquery-1.9.1.js"></script>
 <script src="js/jquery-ui.js"></script>
@@ -90,6 +102,29 @@ function init()
 	////////////
 	// CUSTOM //
 	////////////
+
+	// add 3D text
+	var materialFront = new THREE.MeshBasicMaterial( { color: 0xff0000 } );
+	var materialSide = new THREE.MeshBasicMaterial( { color: 0x000088 } );
+	var materialArray = [ materialFront, materialSide ];
+	var textGeom = new THREE.TextGeometry( "RP       DAC",
+	{
+		size: 30, height: 4, curveSegments: 3,
+		font: "helvetiker", weight: "bold", style: "normal",
+		bevelThickness: 4, bevelSize: 2, bevelEnabled: true,
+		material: 0, extrudeMaterial: 1
+	});
+	// font: helvetiker, gentilis, droid sans, droid serif, optimer
+	// weight: normal, bold
+
+	var textMaterial = new THREE.MeshFaceMaterial(materialArray);
+	var textMesh = new THREE.Mesh(textGeom, textMaterial );
+
+	textGeom.computeBoundingBox();
+	var textWidth = textGeom.boundingBox.max.x - textGeom.boundingBox.min.x;
+
+	textMesh.position.set( -100, 75, 0 );
+	scene.add(textMesh);
 
 	// radius, segments along width, segments along height
 	var sphereGeom =  new THREE.SphereGeometry( 50, 50, 16 );
