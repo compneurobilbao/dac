@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Translucence (Three.js)</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel=stylesheet href="css/base.css"/>
+</head>
+<body>
+
+<script src="js/Three.js"></script>
+<script src="js/Detector.js"></script>
+<script src="js/Stats.js"></script>
+<script src="js/OrbitControls.js"></script>
+<script src="js/THREEx.KeyboardState.js"></script>
+<script src="js/THREEx.FullScreen.js"></script>
+<script src="js/THREEx.WindowResize.js"></script>
+
+<!-- jQuery code to display an information button and box when clicked. -->
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui.js"></script>
+<link rel=stylesheet href="css/jquery-ui.css" />
+<link rel=stylesheet href="css/info.css"/>
+<script src="js/info.js"></script>
+
+<!-- ------------------------------------------------------------ -->
+
+<div id="ThreeJS" style="position: absolute; left:0px; top:0px"></div>
+<script>
+/*
+	Three.js "tutorials by example"
+	Author: Lee Stemkoski
+	Date: July 2013 (three.js v59dev)
+*/
+
+// MAIN
+
+// standard global variables
+var container, scene, camera, renderer, controls, stats;
+var keyboard = new THREEx.KeyboardState();
+var clock = new THREE.Clock();
+// custom global variables
+var cube;
+
+init();
+animate();
+
+// FUNCTIONS
+function init()
+{
+	// SCENE
+	scene = new THREE.Scene();
+	// CAMERA
+	var SCREEN_WIDTH = window.innerWidth, SCREEN_HEIGHT = window.innerHeight;
+	var VIEW_ANGLE = 45, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 0.1, FAR = 20000;
+	camera = new THREE.PerspectiveCamera( VIEW_ANGLE, ASPECT, NEAR, FAR);
+	scene.add(camera);
+	camera.position.set(0,150,400);
+	camera.lookAt(scene.position);
+	// RENDERER
+	if ( Detector.webgl )
+		renderer = new THREE.WebGLRenderer( {antialias:true} );
+	else
+		renderer = new THREE.CanvasRenderer();
+	renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+	container = document.getElementById( 'ThreeJS' );
+	container.appendChild( renderer.domElement );
+	// EVENTS
+	THREEx.WindowResize(renderer, camera);
+	THREEx.FullScreen.bindKey({ charCode : 'm'.charCodeAt(0) });
+	// CONTROLS
+	controls = new THREE.OrbitControls( camera, renderer.domElement );
+	// STATS
+	stats = new Stats();
+	stats.domElement.style.position = 'absolute';
+	stats.domElement.style.bottom = '0px';
+	stats.domElement.style.zIndex = 100;
+	container.appendChild( stats.domElement );
+	// LIGHT
+	var light = new THREE.PointLight(0xffffff);
+	light.position.set(0,250,0);
+	scene.add(light);
+	// SKYBOX/FOG
+	var skyBoxGeometry = new THREE.CubeGeometry( 10000, 10000, 10000 );
+	var skyBoxMaterial = new THREE.MeshBasicMaterial( { color: 0x9999ff, side: THREE.BackSide } );
+	var skyBox = new THREE.Mesh( skyBoxGeometry, skyBoxMaterial );
+	// scene.add(skyBox);
+	scene.fog = new THREE.FogExp2( 0x9999ff, 0.00025 );
+
+	////////////
+	// CUSTOM //
+	////////////
+
+	// radius, segments along width, segments along height
+	var sphereGeom =  new THREE.SphereGeometry( 50, 50, 16 );
+  var bigcubeGeom =  new THREE.CubeGeometry(10, 10, 10);
+  var smallcubeGeom =  new THREE.CubeGeometry(3.33, 3.33, 3.33);
+
+
+
+	// overlapping translucent red/green spheres
+	var redMaterial = new THREE.MeshBasicMaterial( { color: 0xff0000, transparent: true, opacity: 0.5 } );
+	var sphere = new THREE.Mesh( sphereGeom.clone(), redMaterial );
+	sphere.position.set(-75, 0, 0);
+	scene.add( sphere );
+
+	var greenMaterial = new THREE.MeshBasicMaterial( { color: 0x00ff00, transparent: true, opacity: 0.5 } );
+	var sphere = new THREE.Mesh( sphereGeom.clone(), greenMaterial );
+  sphere.position.set(75, 0,0);
+	scene.add( sphere );
+
+  // 6 big cubes
+  var darkMaterial = new THREE.MeshBasicMaterial( { color: 0x000088 } );
+  var bigcube1 = new THREE.Mesh( bigcubeGeom.clone(), darkMaterial);
+	bigcube1.position.set(-75, 0, 0);
+	scene.add( bigcube1 );
+
+  var bigcube2 = new THREE.Mesh( bigcubeGeom.clone(), darkMaterial);
+  bigcube2.position.set(-75, -25, 15);
+  scene.add( bigcube2 );
+
+  var bigcube3 = new THREE.Mesh( bigcubeGeom.clone(), darkMaterial);
+  bigcube3.position.set(-75, 15, -25);
+  scene.add( bigcube3 );
+
+  var bigcube4 = new THREE.Mesh( bigcubeGeom.clone(), darkMaterial);
+  bigcube4.position.set(-50, -15, 25);
+  scene.add( bigcube4 );
+
+  var bigcube5 = new THREE.Mesh( bigcubeGeom.clone(), darkMaterial);
+  bigcube5.position.set(-90, 25, -10);
+  scene.add( bigcube5);
+
+  var bigcube6 = new THREE.Mesh( bigcubeGeom.clone(), darkMaterial);
+  bigcube6.position.set(-90, -30, -10);
+  scene.add( bigcube6 );
+
+  // 60 small cubes
+  var smallcube1 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube1.position.set(70, 2, 3);
+  scene.add( smallcube1 );
+  var smallcube2 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube2.position.set(75, 32, 15);
+  scene.add( smallcube2 );
+  var smallcube3 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube3.position.set(70, 15, 33);
+  scene.add( smallcube3 );
+  var smallcube4 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube4.position.set(70, 32, -15);
+  scene.add( smallcube4 );
+  var smallcube5 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube5.position.set(70, 15, -33);
+  scene.add( smallcube5 );
+  var smallcube6 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube6.position.set(75, -32, 3);
+  scene.add( smallcube6 );
+  var smallcube7 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube7.position.set(75, -15, 15);
+  scene.add( smallcube7 );
+  var smallcube8 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube8.position.set(75, -32, 33);
+  scene.add( smallcube8 );
+  var smallcube9 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube9.position.set(75, -10, -15);
+  scene.add( smallcube9 );
+  var smallcube10 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube10.position.set(70, -32, -33);
+  scene.add( smallcube10 );
+
+  var smallcube11 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube11.position.set(65, 3, 2);
+  scene.add( smallcube11 );
+  var smallcube12 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube12.position.set(60, 33, 15);
+  scene.add( smallcube12 );
+  var smallcube13 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube13.position.set(65, 15, 32);
+  scene.add( smallcube13 );
+  var smallcube14 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube14.position.set(60, 33, -15);
+  scene.add( smallcube14 );
+  var smallcube15 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube15.position.set(65, -15, -32);
+  scene.add( smallcube15 );
+  var smallcube16 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube16.position.set(60, -26, 2);
+  scene.add( smallcube16 );
+  var smallcube17 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube17.position.set(65, -15, 15);
+  scene.add( smallcube17 );
+  var smallcube18 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube18.position.set(65, -26, 32);
+  scene.add( smallcube18 );
+  var smallcube19 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube19.position.set(65, 15, -15);
+  scene.add( smallcube19 );
+  var smallcube20 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube20.position.set(60, -27, -27);
+  scene.add( smallcube20 );
+
+  var smallcube21 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube21.position.set(95, 2, 0);
+  scene.add( smallcube21 );
+  var smallcube22 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube22.position.set(90, 28, 15);
+  scene.add( smallcube22 );
+  var smallcube23 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube23.position.set(95, 10, 30);
+  scene.add( smallcube23 );
+  var smallcube24 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube24.position.set(95, 27, -15);
+  scene.add( smallcube14 );
+  var smallcube25 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube25.position.set(90, -10, -30);
+  scene.add( smallcube25 );
+  var smallcube26 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube26.position.set(95, -30, 2);
+  scene.add( smallcube26 );
+  var smallcube27 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube27.position.set(90, -10, 15);
+  scene.add( smallcube27 );
+  var smallcube28 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube28.position.set(95, -25, 32);
+  scene.add( smallcube28 );
+  var smallcube29 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube29.position.set(90, 15, -15);
+  scene.add( smallcube29 );
+  var smallcube30 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube30.position.set(95, -32, -25);
+  scene.add( smallcube30 );
+
+
+  var smallcube31 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube31.position.set(85, 3, 2);
+  scene.add( smallcube31 );
+  var smallcube32 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube32.position.set(85, 28, 15);
+  scene.add( smallcube32 );
+  var smallcube33 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube33.position.set(80, 15, 30);
+  scene.add( smallcube33 );
+  var smallcube34 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube34.position.set(85, 32, -15);
+  scene.add( smallcube34 );
+  var smallcube35 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube35.position.set(80, 15, -28);
+  scene.add( smallcube35 );
+  var smallcube36 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube36.position.set(80, -30, 3);
+  scene.add( smallcube36 );
+  var smallcube37 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube37.position.set(85, -15, 10);
+  scene.add( smallcube37 );
+  var smallcube38 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube38.position.set(85, 2, 28);
+  scene.add( smallcube38 );
+  var smallcube39 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube39.position.set(80, -15, -15);
+  scene.add( smallcube39 );
+  var smallcube30 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube30.position.set(85, -27, 0);
+  scene.add( smallcube30 );
+
+  var smallcube41 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube41.position.set(50, 2, 3);
+  scene.add( smallcube41 );
+  var smallcube42 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube42.position.set(55, 30, 15);
+  scene.add( smallcube42 );
+  var smallcube43 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube43.position.set(55, 10, 28);
+  scene.add( smallcube43 );
+  var smallcube44 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube44.position.set(50, 27, -15);
+  scene.add( smallcube44 );
+  var smallcube45 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube45.position.set(55, -15, -30);
+  scene.add( smallcube45 );
+  var smallcube46 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube46.position.set(50, -27, 0);
+  scene.add( smallcube46 );
+  var smallcube47 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube47.position.set(55, -15, 15);
+  scene.add( smallcube47 );
+  var smallcube48 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube48.position.set(55, 2, -30);
+  scene.add( smallcube48 );
+  var smallcube49 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube49.position.set(50, 15, -15);
+  scene.add( smallcube49 );
+  var smallcube50 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube50.position.set(55, 30, 0);
+  scene.add( smallcube50 );
+
+  var smallcube51 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube51.position.set(45, 2, 3);
+  scene.add( smallcube51 );
+  var smallcube52 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube52.position.set(45, 30, 15);
+  scene.add( smallcube52 );
+  var smallcube53 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube53.position.set(45, 15, 28);
+  scene.add( smallcube53 );
+  var smallcube54 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube54.position.set(45, 27, -15);
+  scene.add( smallcube54 );
+  var smallcube55 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube55.position.set(40, -15, -30);
+  scene.add( smallcube55 );
+  var smallcube56 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube56.position.set(105, -27, 0);
+  scene.add( smallcube56 );
+  var smallcube57 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube57.position.set(105, -15, 15);
+  scene.add( smallcube57 );
+  var smallcube58 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube58.position.set(105, 2, -30);
+  scene.add( smallcube58 );
+  var smallcube59 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube59.position.set(105, 15, -15);
+  scene.add( smallcube59 );
+  var smallcube60 = new THREE.Mesh( smallcubeGeom.clone(), darkMaterial);
+  smallcube60.position.set(100, 30, 0);
+  scene.add( smallcube60 );
+}
+
+function animate()
+{
+    requestAnimationFrame( animate );
+	render();
+	update();
+}
+
+function update()
+{
+	if ( keyboard.pressed("z") )
+	{
+		// do something
+	}
+
+	controls.update();
+	stats.update();
+}
+
+function render()
+{
+	renderer.render( scene, camera );
+}
+
+</script>
+
+</body>
+</html>
