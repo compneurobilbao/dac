@@ -6,21 +6,23 @@ A divide-and-conquer strategy in tumor sampling enhances detection of intratumor
 # Tumor evolution types
 
 - Linear:
-  - Random:
-  
-  - Normal:
-  
-    ![](https://github.com/compneurobilbao/dac/blob/master/time/linear.gif)
+
+    <img src="https://github.com/compneurobilbao/dac/blob/master/time/linear.gif" align="left" width="400" height="400">
+    <!---  <img src="https://github.com/compneurobilbao/dac/blob/master/time/" align="right" width="400" height="400">
+    --->
 - Branch:
 
-    ![](https://github.com/compneurobilbao/dac/blob/master/time/branch.gif)
-    
+    <img src="https://github.com/compneurobilbao/dac/blob/master/time/branch.gif" align="left" width="400" height="400">
+    <!---<img src="https://github.com/compneurobilbao/dac/blob/master/time/" align="right" width="400" height="400">
+    --->
 - Neutral:
 
-    ![](https://github.com/compneurobilbao/dac/blob/master/time/neutral.gif)
-
+    <img src="https://github.com/compneurobilbao/dac/blob/master/time/neutral.gif" align="left" width="400" height="400">
+    <!---<img src="https://github.com/compneurobilbao/dac/blob/master/time/" align="right" width="400" height="400">
+    --->
 - Punctuated:
 
-    ![](https://github.com/compneurobilbao/dac/blob/master/time/punctuated.gif)
-
+    <img src="https://github.com/compneurobilbao/dac/blob/master/time/punctuated.gif" align="left" width="400" height="400">
+    <!---<img src="https://github.com/compneurobilbao/dac/blob/master/time/" align="right" width="400" height="400">
+    --->
 
