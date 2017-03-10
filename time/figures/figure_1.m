@@ -32,8 +32,8 @@ set(h1,'LineStyle',':');
 set(gca,'XTickLabel',{'0','20','40','60','80','100'},...
     'XTick',[0 0.2 0.4 0.6 0.8 1],...
     'FontSize',30,'FontWeight','bold')
-xlim(axes1,[0 1.05]);
-ylim(axes1,[0 105]);
+xlim([0 1.05]);
+ylim([0 105]);
 print('branch_fig1','-deps')
 
 
@@ -52,8 +52,8 @@ set(h1,'LineStyle',':');
 set(gca,'XTickLabel',{'0','20','40','60','80','100'},...
     'XTick',[0 0.2 0.4 0.6 0.8 1],...
     'FontSize',30,'FontWeight','bold')
-xlim(axes1,[0 1.05]);
-ylim(axes1,[0 105]);
+xlim([0 1.05]);
+ylim([0 105]);
 print('neutral_fig1','-deps')
 
 
@@ -73,6 +73,9 @@ set(h1,'LineStyle',':');
 set(gca,'XTickLabel',{'0','20','40','60','80','100'},...
     'XTick',[0 0.2 0.4 0.6 0.8 1],...
     'FontSize',30,'FontWeight','bold')
-xlim(axes1,[0 1.05]);
-ylim(axes1,[0 105]);
+xlim([0 1.05]);
+ylim([0 105]);
 print('punctuated_fig1','-deps')
+
+
+close all;
