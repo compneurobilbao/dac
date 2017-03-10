@@ -17,7 +17,7 @@ t=100;      % 100, number of timesteps
 max_C=4;  % ITH types
 max_trials=500;  % 500, for each value of H, we apply separately each strategy N=max_trials and compute mean +- standard deviation
 max_tumor_number=15;  % 15, also averaging over different tumors
-tumor_evolution='linear';  %'random' or 'regional'
+tumor_evolution='neutral';  %'random' or 'regional'
 
 for tumor_number=1:max_tumor_number
     tumor_number
@@ -73,8 +73,7 @@ for tumor_number=1:max_tumor_number
                 [cube, record] = grow_neutral(cube,timepoint/t,c, record);
             else
                 [cube, record] = grow_neutral(cube,timepoint/t,0, record);
-            end
-            
+            end  
         else % 'punctuated'
             if ~isempty(colors) && mod(timepoint,3)
                 new_color = colors(1);
