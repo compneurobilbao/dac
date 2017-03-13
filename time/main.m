@@ -17,7 +17,7 @@ t=100;      % 100, number of timesteps
 max_C=4;  % ITH types
 max_trials=500;  % 500, for each value of H, we apply separately each strategy N=max_trials and compute mean +- standard deviation
 max_tumor_number=15;  % 15, also averaging over different tumors
-tumor_evolution='neutral';  %'random' or 'regional'
+tumor_evolution='linear';  %'random' or 'regional'
 
 for tumor_number=1:max_tumor_number
     tumor_number
@@ -47,11 +47,8 @@ for tumor_number=1:max_tumor_number
         % and ITH types  equal to C
         
         if (strcmp(tumor_evolution,'linear'))
-            colors = unique(cube);
-            if colors(1) == 0
-                colors(1) = [];
-            end
-            if poissrnd(t_aux) > poisson_lambda && ~isempty(colors) && length(colors) < 2
+            color_cube = unique(cube);
+            if poissrnd(t_aux) > poisson_lambda && ~isempty(colors) && length(color_cube) < 2
                 t_aux = 0;
                 new_color = colors(1);
                 colors(1) = [];
