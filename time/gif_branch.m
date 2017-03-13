@@ -53,6 +53,13 @@ for timepoint=1:t
     im = frame2im(frame);
     [imind,cm] = rgb2ind(im,256);
     imwrite(imind,cm,filename,'gif','WriteMode','append');
+    
+    if timepoint == 10
+        print('neutral_caption_begin','-deps')
+    elseif timepoint == 90
+        print('neutral_caption_end','-deps')
+        break
+    end 
 end
 
 

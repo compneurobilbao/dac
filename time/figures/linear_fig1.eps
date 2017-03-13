@@ -1,10 +1,11 @@
 %!PS-Adobe-2.0 EPSF-1.2
 %%Creator: MATLAB, The MathWorks, Inc. Version 8.1.0.604 (R2013a). Operating System: Linux 3.13.0-112-generic #159-Ubuntu SMP Fri Mar 3 15:26:07 UTC 2017 x86_64.
 %%Title: ./linear_fig1.eps
-%%CreationDate: 03/10/2017  11:00:21
+%%CreationDate: 03/13/2017  09:10:03
 %%DocumentNeededFonts: Helvetica-Bold
 %%+ Helvetica
 %%DocumentProcessColors: Cyan Magenta Yellow Black
+%%Extensions: CMYK
 %%Pages: 1
 %%BoundingBox:    18   179   568   616
 %%EndComments
@@ -136,12 +137,14 @@
   smat stri tri_to_matrix tmat2 concatmatrix } bdef
 /ds {stri astore pop} bdef
 /dt {dtri astore pop} bdef
-/db {2 copy /cols xdef /rows xdef mul dup string
+/db {2 copy /cols xdef /rows xdef mul dup 3 mul string
   currentfile exch readhexstring pop
-  /bmap xdef pop pop} bdef
+  dup 0 3 index getinterval /rbmap xdef
+  dup 2 index dup getinterval /gbmap xdef
+  1 index dup 2 mul exch getinterval /bbmap xdef pop pop}bdef
 /it {gs np dtri aload pop moveto lineto lineto cp c
   cols rows 8 compute_transform 
-  {bmap} image gr}bdef
+  rbmap gbmap bbmap true 3 colorimage gr}bdef
 /il {newpath moveto lineto stroke}bdef
 currentdict end def
 %%EndProlog
@@ -252,6 +255,8 @@ SO
 1161 4401 mt 1161  388 L
 6255 4401 mt 6255  388 L
 gs 1161 389 5095 4013 MR c np
+/c8 { 0.000000 0.000000 1.000000 sr} bdef
+c8
 0 633 1210 3639 2 MP stroke
 98 0 1161 3639 2 MP stroke
 98 0 1161 4272 2 MP stroke
@@ -567,6 +572,8 @@ DO
 49 0 50 -35 49 -94 50 -164 49 -183 50 -280 49 -547 50 -659 
 49 -492 50 -510 49 -412 1210 3956 100 MP stroke
 SO
+/c9 { 1.000000 0.000000 0.000000 sr} bdef
+c9
 0 884 1210 2896 2 MP stroke
 98 0 1161 2896 2 MP stroke
 98 0 1161 3780 2 MP stroke
@@ -882,6 +889,8 @@ SO
 49 -277 50 -917 49 -1520 1210 3338 100 MP stroke
 gr
 
+c9
+0 sg
 2467 5101 mt 
 (Time \(months\)) s
  366 6027 mt  -90 rotate
@@ -932,16 +941,21 @@ SO
 (RP) s
 gs 4939 449 1257 915 MR c np
 DO
+c8
 650 0 5068 705 2 MP stroke
 SO
 gr
 
+c8
+0 sg
 5784 1239 mt 
 (DAC) s
 gs 4939 449 1257 915 MR c np
+c9
 650 0 5068 1106 2 MP stroke
 gr
 
+c9
 
 end %%Color Dict
 

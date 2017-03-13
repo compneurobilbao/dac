@@ -1,10 +1,11 @@
 %!PS-Adobe-2.0 EPSF-1.2
 %%Creator: MATLAB, The MathWorks, Inc. Version 8.1.0.604 (R2013a). Operating System: Linux 3.13.0-112-generic #159-Ubuntu SMP Fri Mar 3 15:26:07 UTC 2017 x86_64.
 %%Title: ./neutral_fig1.eps
-%%CreationDate: 03/10/2017  11:00:23
+%%CreationDate: 03/13/2017  09:10:05
 %%DocumentNeededFonts: Helvetica-Bold
 %%+ Helvetica
 %%DocumentProcessColors: Cyan Magenta Yellow Black
+%%Extensions: CMYK
 %%Pages: 1
 %%BoundingBox:    18   179   568   591
 %%EndComments
@@ -136,12 +137,14 @@
   smat stri tri_to_matrix tmat2 concatmatrix } bdef
 /ds {stri astore pop} bdef
 /dt {dtri astore pop} bdef
-/db {2 copy /cols xdef /rows xdef mul dup string
+/db {2 copy /cols xdef /rows xdef mul dup 3 mul string
   currentfile exch readhexstring pop
-  /bmap xdef pop pop} bdef
+  dup 0 3 index getinterval /rbmap xdef
+  dup 2 index dup getinterval /gbmap xdef
+  1 index dup 2 mul exch getinterval /bbmap xdef pop pop}bdef
 /it {gs np dtri aload pop moveto lineto lineto cp c
   cols rows 8 compute_transform 
-  {bmap} image gr}bdef
+  rbmap gbmap bbmap true 3 colorimage gr}bdef
 /il {newpath moveto lineto stroke}bdef
 currentdict end def
 %%EndProlog
@@ -252,6 +255,8 @@ SO
  926 4575 mt  926  389 L
 6254 4575 mt 6254  389 L
 gs 926 389 5330 4187 MR c np
+/c8 { 0.000000 0.000000 1.000000 sr} bdef
+c8
 0 44 977 4532 2 MP stroke
 103 0 926 4532 2 MP stroke
 0 90 1029 4486 2 MP stroke
@@ -562,6 +567,8 @@ DO
 52 -119 52 -73 51 -115 52 -69 52 -107 52 -96 52 -76 51 -54 
 52 -59 52 -29 52 -13 977 4569 100 MP stroke
 SO
+/c9 { 1.000000 0.000000 0.000000 sr} bdef
+c9
 0 39 977 4537 2 MP stroke
 103 0 926 4537 2 MP stroke
 0 162 1029 4414 2 MP stroke
@@ -874,6 +881,8 @@ SO
 52 -177 52 -120 52 -45 977 4570 100 MP stroke
 gr
 
+c9
+0 sg
 %%IncludeResource: font Helvetica-Bold
 /Helvetica-Bold /ISOLatin1Encoding 180 FMSR
 
@@ -927,16 +936,21 @@ SO
 (RP) s
 gs 4939 449 1257 915 MR c np
 DO
+c8
 650 0 5068 705 2 MP stroke
 SO
 gr
 
+c8
+0 sg
 5784 1239 mt 
 (DAC) s
 gs 4939 449 1257 915 MR c np
+c9
 650 0 5068 1106 2 MP stroke
 gr
 
+c9
 
 end %%Color Dict
 

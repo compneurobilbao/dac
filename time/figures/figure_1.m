@@ -15,7 +15,7 @@ set(gca,'XTickLabel',{'0','20','40','60','80','100'},...
     'FontSize',30,'FontWeight','bold')
 xlim([0 1.05]);
 ylim([0 105]);
-print('linear_fig1','-deps')
+print('linear_fig1','-depsc')
 
 load('branch.mat')
 figure;
@@ -34,7 +34,7 @@ set(gca,'XTickLabel',{'0','20','40','60','80','100'},...
     'FontSize',30,'FontWeight','bold')
 xlim([0 1.05]);
 ylim([0 105]);
-print('branch_fig1','-deps')
+print('branch_fig1','-depsc')
 
 
 load('neutral.mat')
@@ -54,7 +54,7 @@ set(gca,'XTickLabel',{'0','20','40','60','80','100'},...
     'FontSize',30,'FontWeight','bold')
 xlim([0 1.05]);
 ylim([0 105]);
-print('neutral_fig1','-deps')
+print('neutral_fig1','-depsc')
 
 
 
@@ -75,7 +75,7 @@ set(gca,'XTickLabel',{'0','20','40','60','80','100'},...
     'FontSize',30,'FontWeight','bold')
 xlim([0 1.05]);
 ylim([0 105]);
-print('punctuated_fig1','-deps')
+print('punctuated_fig1','-depsc')
 
 
 close all;
