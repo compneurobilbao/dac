@@ -6,7 +6,6 @@ A divide-and-conquer strategy in tumor sampling enhances detection of intratumor
 
 - Linear:
 
-    ![](https://github.com/compneurobilbao/dac/blob/master/time/figures/linear_performance.gif)
     
 - Branch:
 
