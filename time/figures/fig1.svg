@@ -10,7 +10,7 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="2851.7698"
+   width="2155.3154"
    height="2411.2485"
    id="svg10545"
    version="1.1"
@@ -350,21 +350,21 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.2723396"
-     inkscape:cx="1425.8849"
+     inkscape:cx="729.43064"
      inkscape:cy="1205.5778"
      inkscape:document-units="px"
      inkscape:current-layer="g33262"
-     showgrid="false"
+     showgrid="true"
      inkscape:snap-global="false"
      fit-margin-top="0.5"
      fit-margin-left="0.5"
      fit-margin-right="0.5"
      fit-margin-bottom="0.5"
      units="cm"
-     inkscape:window-width="900"
-     inkscape:window-height="1412"
-     inkscape:window-x="1280"
-     inkscape:window-y="0"
+     inkscape:window-width="1280"
+     inkscape:window-height="973"
+     inkscape:window-x="0"
+     inkscape:window-y="439"
      inkscape:window-maximized="1">
     <inkscape:grid
        type="xygrid"
@@ -373,8 +373,8 @@
        visible="true"
        enabled="true"
        snapvisiblegridlinesonly="true"
-       originx="1409.4243px"
-       originy="150.21147px" />
+       originx="712.97004px"
+       originy="150.21144px" />
   </sodipodi:namedview>
   <metadata
      id="metadata10550">
@@ -384,7 +384,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -392,7 +392,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(1409.4243,1208.6284)">
+     transform="translate(712.97004,1208.6284)">
     <g
        id="g35182"
        transform="translate(-33.898621,-103.96896)"
@@ -10147,52 +10147,56 @@
            y="-940">t=90</tspan>
       </text>
       <text
-         style="font-size:57.18753052px;stroke-width:3.54330707;stroke-miterlimit:10;stroke-dasharray:none"
-         y="-671.83765"
-         x="-988.9585"
-         id="text6681-7-0">
+         style="font-size:29.66631317px;stroke-width:3.54330707;stroke-miterlimit:10;stroke-dasharray:none"
+         y="-588.9585"
+         x="595.49426"
+         id="text6681-7-0"
+         transform="matrix(0,-1,1,0,0,0)">
         <tspan
            id="tspan6683-5-9"
            sodipodi:role="line"
-           style="font-size:142.96882629px;font-variant:normal;font-weight:bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold"
-           x="-988.9585"
-           y="-671.83765">linear</tspan>
+           style="font-size:74.16577911px;font-variant:normal;font-weight:bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold"
+           x="595.49426"
+           y="-588.9585">linear</tspan>
       </text>
       <text
-         style="font-size:57.18753052px;stroke-width:3.54330707;stroke-miterlimit:10;stroke-dasharray:none"
-         y="-71.837646"
-         x="-1063.728"
-         id="text6681-7-0-3">
+         style="font-size:29.66631317px;stroke-width:3.54330707;stroke-miterlimit:10;stroke-dasharray:none"
+         y="-588.9585"
+         x="2.4160736"
+         id="text6681-7-0-3"
+         transform="matrix(0,-1,1,0,0,0)">
         <tspan
            id="tspan6683-5-9-6"
            sodipodi:role="line"
-           style="font-size:142.96882629px;font-variant:normal;font-weight:bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold"
-           x="-1063.728"
-           y="-71.837646">branch</tspan>
+           style="font-size:74.16577911px;font-variant:normal;font-weight:bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold"
+           x="2.4160736"
+           y="-588.9585">branch</tspan>
       </text>
       <text
-         style="font-size:57.18753052px;stroke-width:3.54330707;stroke-miterlimit:10;stroke-dasharray:none"
-         y="488.16235"
-         x="-1068.9585"
-         id="text6681-7-0-0">
+         style="font-size:29.66631317px;stroke-width:3.54330707;stroke-miterlimit:10;stroke-dasharray:none"
+         y="-588.9585"
+         x="-550.24011"
+         id="text6681-7-0-0"
+         transform="matrix(0,-1,1,0,0,0)">
         <tspan
            id="tspan6683-5-9-62"
            sodipodi:role="line"
-           style="font-size:142.96882629px;font-variant:normal;font-weight:bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold"
-           x="-1068.9585"
-           y="488.16235">neutral</tspan>
+           style="font-size:74.16577911px;font-variant:normal;font-weight:bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold"
+           x="-550.24011"
+           y="-588.9585">neutral</tspan>
       </text>
       <text
-         style="font-size:57.18753052px;stroke-width:3.54330707;stroke-miterlimit:10;stroke-dasharray:none"
-         y="1008.1624"
-         x="-1348.9585"
-         id="text6681-7-0-6">
+         style="font-size:29.66631317px;stroke-width:3.54330707;stroke-miterlimit:10;stroke-dasharray:none"
+         y="-588.9585"
+         x="-1185.5526"
+         id="text6681-7-0-6"
+         transform="matrix(0,-1,1,0,0,0)">
         <tspan
            id="tspan6683-5-9-1"
            sodipodi:role="line"
-           style="font-size:142.96882629px;font-variant:normal;font-weight:bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold"
-           x="-1348.9585"
-           y="1008.1624">punctuated</tspan>
+           style="font-size:74.16577911px;font-variant:normal;font-weight:bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold"
+           x="-1185.5526"
+           y="-588.9585">punctuated</tspan>
       </text>
     </g>
     <g
