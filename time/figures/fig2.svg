@@ -10,7 +10,7 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="989.90869"
-   height="1920.2677"
+   height="2001.3555"
    id="svg4523"
    version="1.1"
    inkscape:version="0.48.4 r9939"
@@ -1116,9 +1116,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.26699748"
-     inkscape:cx="119.31741"
-     inkscape:cy="1069.9523"
+     inkscape:zoom="0.37759145"
+     inkscape:cx="525.71712"
+     inkscape:cy="1047.3191"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -1141,7 +1141,7 @@
        enabled="true"
        snapvisiblegridlinesonly="true"
        originx="-29.477692px"
-       originy="-286.51292px" />
+       originy="-286.51295px" />
   </sodipodi:namedview>
   <metadata
      id="metadata4528">
@@ -1151,7 +1151,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1159,7 +1159,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(1370.4549,567.17666)">
+     transform="translate(1370.4549,648.2645)">
     <text
        style="font-size:29.66631317px;stroke-width:3.54330707;stroke-miterlimit:10;stroke-dasharray:none"
        y="-1297.4849"
@@ -5259,6 +5259,30 @@
          id="tspan5725-9-7-9-6"
          x="-948.74414"
          y="-581.6936">Performance%</tspan>
+    </text>
+    <text
+       style="font-size:28.60110474px;stroke-width:3.54330707;stroke-miterlimit:10;stroke-dasharray:none"
+       y="-578.77997"
+       x="-1085.5604"
+       id="text6681-7">
+      <tspan
+         id="tspan6683-5"
+         sodipodi:role="line"
+         style="font-size:71.50276184px;font-variant:normal;font-weight:bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold"
+         x="-1085.5604"
+         y="-578.77997">t=10</tspan>
+    </text>
+    <text
+       style="font-size:28.60110474px;stroke-width:3.54330707;stroke-miterlimit:10;stroke-dasharray:none"
+       y="-578.19702"
+       x="-620.5799"
+       id="text6681-7-3">
+      <tspan
+         id="tspan6683-5-5"
+         sodipodi:role="line"
+         style="font-size:71.50276184px;font-variant:normal;font-weight:bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold"
+         x="-620.5799"
+         y="-578.19702">t=90</tspan>
     </text>
   </g>
 </svg>
