@@ -10,7 +10,7 @@ function [success,positions] = DAC2D(cube,L,S,max_C)
 
 d=floor(S/2);
 
-trials_number=4*d+1;
+trials_number=d*d+1;
 positions=zeros(L,L);
 success=zeros(max_C,1);
 
