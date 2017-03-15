@@ -1,10 +1,8 @@
 %
 % Divide and conquer (DAC) strategy for tumor sampling
-% Jesus M Cortes, Ikerbasque & Biocruces
+% Asier Erramuzpe, Biocruces
 % March 10, 2016
-%
-% Figure 2 
-%
+
 
 clear all;
 clc;

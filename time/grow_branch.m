@@ -1,9 +1,7 @@
 %
 % Divide and conquer (DAC) strategy for tumor sampling
-% Jesus M Cortes, Ikerbasque & Biocruces
+% Asier Erramuzpe, Biocruces
 % March 10, 2016
-%
-% Necessary function to run simula2D.m
 
 
 function [cube, record] = grow_branch(cube,time_ratio,new_color,record)
