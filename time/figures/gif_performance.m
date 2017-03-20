@@ -4,7 +4,8 @@ clc;
 
 load('linear.mat')
 
-figure;
+FigHandle = figure;
+set(FigHandle, 'Position', [100, 100, 1000, 500]);
 hold on;
 
 filename = 'linear_performance.gif';
@@ -71,7 +72,8 @@ clear all;
 clc;
 load('branch.mat')
 
-figure;
+FigHandle = figure;
+set(FigHandle, 'Position', [100, 100, 1000, 500]);
 hold on;
 
 filename = 'branch_performance.gif';
@@ -132,7 +134,8 @@ clear all;
 clc;
 load('neutral.mat')
 
-figure;
+FigHandle = figure;
+set(FigHandle, 'Position', [100, 100, 1000, 500]);
 hold on;
 
 filename = 'neutral_performance.gif';
@@ -197,7 +200,8 @@ clear all;
 clc;
 load('punctuated.mat')
 
-h_old = figure;
+FigHandle = figure;
+set(FigHandle, 'Position', [100, 100, 1000, 500]);
 hold on;
 
 filename = 'punctuated_performance.gif';
