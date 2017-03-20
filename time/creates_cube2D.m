@@ -10,8 +10,8 @@ function [cube] = creates_cube2D(L)
 
 cube=zeros(L,L);
 
-x=floor(L/2);
-y=floor(L/2);
+x=floor(L/2)+1;
+y=floor(L/2)+1;
 c=1;
 
 cube(x,y)=c;

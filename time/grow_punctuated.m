@@ -56,8 +56,8 @@ end
    
     
 if new_color ~= 0
-    x=floor(L/2);
-    y=floor(L/2);
+    x=floor(L/2)+1;
+    y=floor(L/2)+1;
     cube(x,y)=new_color;
 end
 
