@@ -1,3 +1,7 @@
+clear all;
+clc;
+addpath('../');
+
 load('linear.mat')
 figure;
 fontsizevar=30;

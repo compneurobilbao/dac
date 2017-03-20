@@ -1,5 +1,9 @@
 clear all;
 clc;
+addpath('../');
+
+clear all;
+clc;
 
 load('linear.mat')
 
