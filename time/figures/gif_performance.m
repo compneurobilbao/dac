@@ -1,6 +1,6 @@
 clear all;
 clc;
-
+addpath('../');
 
 load('linear.mat')
 
@@ -43,7 +43,7 @@ for timepoint=1:length(data)
     title(strcat('Timepoint: ',num2str(timepoint)))
     
     subplot(1,2,2)
-    for c=1:4
+    for c=1
         h1=errorbar(data(timepoint,1),data(timepoint,4*(c-1)+2),sqrt(data(timepoint,4*(c-1)+3)),'b');hold on; 
         h2=errorbar(data(timepoint,1),data(timepoint,4*(c-1)+4),sqrt(data(timepoint,4*(c-1)+5)),'r'); hold on;
     end
@@ -105,7 +105,7 @@ for timepoint=1:length(data)
     title(strcat('Timepoint: ',num2str(timepoint)))
     
     subplot(1,2,2)
-    for c=1:4
+    for c=3
         h1=errorbar(data(timepoint,1),data(timepoint,4*(c-1)+2),sqrt(data(timepoint,4*(c-1)+3)),'b');hold on; 
         h2=errorbar(data(timepoint,1),data(timepoint,4*(c-1)+4),sqrt(data(timepoint,4*(c-1)+5)),'r'); hold on;
     end
@@ -171,7 +171,7 @@ for timepoint=1:length(data)
     title(strcat('Timepoint: ',num2str(timepoint)))
     
     subplot(1,2,2)
-    for c=1:4
+    for c=3
         h1=errorbar(data(timepoint,1),data(timepoint,4*(c-1)+2),sqrt(data(timepoint,4*(c-1)+3)),'b');hold on; 
         h2=errorbar(data(timepoint,1),data(timepoint,4*(c-1)+4),sqrt(data(timepoint,4*(c-1)+5)),'r'); hold on;
     end
@@ -231,7 +231,7 @@ for timepoint=1:length(data)
     title(strcat('Timepoint: ',num2str(timepoint)))
     
     subplot(1,2,2)
-    for c=1:4
+    for c=3
         h1=errorbar(data(timepoint,1),data(timepoint,4*(c-1)+2),sqrt(data(timepoint,4*(c-1)+3)),'b');hold on; 
         h2=errorbar(data(timepoint,1),data(timepoint,4*(c-1)+4),sqrt(data(timepoint,4*(c-1)+5)),'r'); hold on;
     end
