@@ -6,13 +6,10 @@ load('linear.mat')
 
 FigHandle = figure;
 set(FigHandle, 'Position', [100, 100, 1000, 500]);
+suptitle('LINEAR EVOLUTION')
 hold on;
 
 filename = 'linear_performance.gif';
-frame = getframe(1);
-im = frame2im(frame);
-[imind,cm] = rgb2ind(im,256);
-imwrite(imind,cm,filename,'gif', 'Loopcount',inf);
 
 cube = creates_cube2D(L);
 
@@ -41,6 +38,11 @@ for timepoint=1:length(data)
     end
     imagesc(cube,[0 max_C]);
     title(strcat('Timepoint: ',num2str(timepoint)))
+    if timepoint == 10
+        print('linear_caption_begin','-depsc')
+    elseif timepoint == 90
+        print('linear_caption_end','-depsc')
+    end 
     
     subplot(1,2,2)
     for c=1
@@ -63,7 +65,11 @@ for timepoint=1:length(data)
     frame = getframe(1);
     im = frame2im(frame);
     [imind,cm] = rgb2ind(im,256);
-    imwrite(imind,cm,filename,'gif','WriteMode','append');
+    if timepoint == 1
+        imwrite(imind,cm,filename,'gif', 'Loopcount',inf);
+    else
+        imwrite(imind,cm,filename,'gif','WriteMode','append','DelayTime',0.1);
+    end
 end
 close all
 
@@ -74,14 +80,10 @@ load('branch.mat')
 
 FigHandle = figure;
 set(FigHandle, 'Position', [100, 100, 1000, 500]);
+suptitle('BRANCHED EVOLUTION')
 hold on;
 
 filename = 'branch_performance.gif';
-frame = getframe(1);
-im = frame2im(frame);
-[imind,cm] = rgb2ind(im,256);
-imwrite(imind,cm,filename,'gif', 'Loopcount',inf);
-
 cube = creates_cube2D(L);
 
 appearance_ratio = 1/(t/20); % it appears 5 times in mean
@@ -103,6 +105,11 @@ for timepoint=1:length(data)
     end
     imagesc(cube,[0 max_C]);
     title(strcat('Timepoint: ',num2str(timepoint)))
+    if timepoint == 10
+        print('branch_caption_begin','-depsc')
+    elseif timepoint == 90
+        print('branch_caption_end','-depsc')
+    end 
     
     subplot(1,2,2)
     for c=3
@@ -125,7 +132,11 @@ for timepoint=1:length(data)
     frame = getframe(1);
     im = frame2im(frame);
     [imind,cm] = rgb2ind(im,256);
-    imwrite(imind,cm,filename,'gif','WriteMode','append');
+    if timepoint == 1
+        imwrite(imind,cm,filename,'gif', 'Loopcount',inf);
+    else
+        imwrite(imind,cm,filename,'gif','WriteMode','append','DelayTime',0.1);
+    end
 end
 close all
 
@@ -136,14 +147,10 @@ load('neutral.mat')
 
 FigHandle = figure;
 set(FigHandle, 'Position', [100, 100, 1000, 500]);
+suptitle('NEUTRAL EVOLUTION')
 hold on;
 
 filename = 'neutral_performance.gif';
-frame = getframe(1);
-im = frame2im(frame);
-[imind,cm] = rgb2ind(im,256);
-imwrite(imind,cm,filename,'gif', 'Loopcount',inf);
-
 if (strcmp(tumor_evolution,'neutral'))
     appearance_ratio = 1/(t/100); % it appears 50 time in mean
     record = [floor(L/2) floor(L/2) 1 0]; % record = [x y color growing_step]
@@ -169,6 +176,11 @@ for timepoint=1:length(data)
     end
     imagesc(cube,[0 max_C]);
     title(strcat('Timepoint: ',num2str(timepoint)))
+    if timepoint == 10
+        print('neutral_caption_begin','-depsc')
+    elseif timepoint == 90
+        print('neutral_caption_end','-depsc')
+    end
     
     subplot(1,2,2)
     for c=3
@@ -191,7 +203,11 @@ for timepoint=1:length(data)
     frame = getframe(1);
     im = frame2im(frame);
     [imind,cm] = rgb2ind(im,256);
-    imwrite(imind,cm,filename,'gif','WriteMode','append');
+    if timepoint == 1
+        imwrite(imind,cm,filename,'gif', 'Loopcount',inf);
+    else
+        imwrite(imind,cm,filename,'gif','WriteMode','append','DelayTime',0.1);
+    end
 end
 close all
 
@@ -202,13 +218,10 @@ load('punctuated.mat')
 
 FigHandle = figure;
 set(FigHandle, 'Position', [100, 100, 1000, 500]);
+suptitle('PUNCTUATED EVOLUTION')
 hold on;
 
 filename = 'punctuated_performance.gif';
-frame = getframe(1);
-im = frame2im(frame);
-[imind,cm] = rgb2ind(im,256);
-imwrite(imind,cm,filename,'gif', 'Loopcount',inf);
 if (strcmp(tumor_evolution,'punctuated'))
     colors = 2:max_C;
 end
@@ -229,6 +242,11 @@ for timepoint=1:length(data)
     end
     imagesc(cube,[0 max_C]);
     title(strcat('Timepoint: ',num2str(timepoint)))
+    if timepoint == 10
+        print('punctuated_caption_begin','-depsc')
+    elseif timepoint == 90
+        print('punctuated_caption_end','-depsc')
+    end
     
     subplot(1,2,2)
     for c=3
@@ -251,7 +269,11 @@ for timepoint=1:length(data)
     frame = getframe(1);
     im = frame2im(frame);
     [imind,cm] = rgb2ind(im,256);
-    imwrite(imind,cm,filename,'gif','WriteMode','append');
+    if timepoint == 1
+        imwrite(imind,cm,filename,'gif', 'Loopcount',inf);
+    else
+        imwrite(imind,cm,filename,'gif','WriteMode','append','DelayTime',0.1);
+    end
 end
 close all
 
