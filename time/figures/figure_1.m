@@ -9,7 +9,7 @@ for c=1
     h1=errorbar(data(:,1),data(:,4*(c-1)+2),sqrt(data(:,4*(c-1)+3)),'b');hold on; 
     h2=errorbar(data(:,1),data(:,4*(c-1)+4),sqrt(data(:,4*(c-1)+5)),'r'); hold on;
 end
-legend([h1 h2], 'RP', 'DAC')
+legend([h1 h2], 'RP', 'MSTS')
 set(gca,'FontSize',fontsizevar);
 xlabel('Time (months)','FontWeight','bold');
 ylabel('Percentage of ITH detection (mean \pm error)','FontWeight','bold');
@@ -28,7 +28,7 @@ for c=3
     h1=errorbar(data(:,1),data(:,4*(c-1)+2),sqrt(data(:,4*(c-1)+3)),'b');hold on; 
     h2=errorbar(data(:,1),data(:,4*(c-1)+4),sqrt(data(:,4*(c-1)+5)),'r'); hold on;
 end
-legend([h1 h2], 'RP', 'DAC')
+legend([h1 h2], 'RP', 'MSTS')
 set(gca,'FontSize',fontsizevar);
 xlabel('Time (months)','FontWeight','bold');
 ylabel('Percentage of ITH detection (mean \pm error)','FontWeight','bold');
@@ -48,7 +48,7 @@ for c=3
     h1=errorbar(data(:,1),data(:,4*(c-1)+2),sqrt(data(:,4*(c-1)+3)),'b');hold on; 
     h2=errorbar(data(:,1),data(:,4*(c-1)+4),sqrt(data(:,4*(c-1)+5)),'r'); hold on;
 end
-legend([h1 h2], 'RP', 'DAC')
+legend([h1 h2], 'RP', 'MSTS')
 set(gca,'FontSize',fontsizevar);
 xlabel('Time (months)','FontWeight','bold');
 ylabel('Percentage of ITH detection (mean \pm error)','FontWeight','bold');
@@ -69,7 +69,7 @@ for c=3
     h1=errorbar(data(:,1),data(:,4*(c-1)+2),sqrt(data(:,4*(c-1)+3)),'b');hold on; 
     h2=errorbar(data(:,1),data(:,4*(c-1)+4),sqrt(data(:,4*(c-1)+5)),'r'); hold on;
 end
-legend([h1 h2], 'RP', 'DAC')
+legend([h1 h2], 'RP', 'MSTS')
 set(gca,'FontSize',fontsizevar);
 xlabel('Time (months)','FontWeight','bold');
 ylabel('Percentage of ITH detection (mean \pm error)','FontWeight','bold');
