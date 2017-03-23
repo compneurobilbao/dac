@@ -51,7 +51,7 @@ for timepoint=1:length(data)
     end
     legend([h1 h2], 'RP', 'MSTS')
     set(gca,'FontSize',fontsizevar);
-    xlabel('Time (months)','FontWeight','bold');
+    xlabel('Time (t, months)','FontWeight','bold');
     ylabel('Percentage of ITH detection (mean \pm error)','FontWeight','bold');
     set(h1,'LineStyle',':');
     set(gca,'XTickLabel',{'0','20','40','60','80','100'},...
@@ -118,7 +118,7 @@ for timepoint=1:length(data)
     end
     legend([h1 h2], 'RP', 'MSTS')
     set(gca,'FontSize',fontsizevar);
-    xlabel('Time (months)','FontWeight','bold');
+    xlabel('Time (t, months)','FontWeight','bold');
     ylabel('Percentage of ITH detection (mean \pm error)','FontWeight','bold');
     set(h1,'LineStyle',':');
     set(gca,'XTickLabel',{'0','20','40','60','80','100'},...
@@ -189,7 +189,7 @@ for timepoint=1:length(data)
     end
     legend([h1 h2], 'RP', 'MSTS')
     set(gca,'FontSize',fontsizevar);
-    xlabel('Time (months)','FontWeight','bold');
+    xlabel('Time (t, months)','FontWeight','bold');
     ylabel('Percentage of ITH detection (mean \pm error)','FontWeight','bold');
     set(h1,'LineStyle',':');
     set(gca,'XTickLabel',{'0','20','40','60','80','100'},...
@@ -255,7 +255,7 @@ for timepoint=1:length(data)
     end
     legend([h1 h2], 'RP', 'MSTS')
     set(gca,'FontSize',fontsizevar);
-    xlabel('Time (months)','FontWeight','bold');
+    xlabel('Time (t, months)','FontWeight','bold');
     ylabel('Percentage of ITH detection (mean \pm error)','FontWeight','bold');
     set(h1,'LineStyle',':');
     set(gca,'XTickLabel',{'0','20','40','60','80','100'},...

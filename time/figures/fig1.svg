@@ -349,9 +349,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.25505101"
-     inkscape:cx="1197.6694"
-     inkscape:cy="714.51644"
+     inkscape:zoom="0.3606966"
+     inkscape:cx="1093.1523"
+     inkscape:cy="970.52841"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -361,10 +361,10 @@
      fit-margin-right="0.5"
      fit-margin-bottom="0.5"
      units="cm"
-     inkscape:window-width="900"
-     inkscape:window-height="1412"
-     inkscape:window-x="1280"
-     inkscape:window-y="0"
+     inkscape:window-width="1280"
+     inkscape:window-height="973"
+     inkscape:window-x="0"
+     inkscape:window-y="439"
      inkscape:window-maximized="1">
     <inkscape:grid
        type="xygrid"
@@ -1121,10 +1121,10 @@
        style="font-size:22.12999344px;stroke-width:3.54330707;stroke-miterlimit:10;stroke-dasharray:none">
       <tspan
          style="font-size:55.3249855px;font-variant:normal;font-weight:bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold"
-         x="946.8869 980.69067 996.07092 1045.2548 1076.0155 1091.3959 1109.819 1159.0029 1192.8065 1226.61 1245.0333 1278.8368 1309.5975"
-         y="-430.89706"
          sodipodi:role="line"
-         id="tspan6683">Time (months)</tspan>
+         id="tspan6683"
+         x="946.8869"
+         y="-430.89706" />
     </text>
     <text
        id="text6681-7"
@@ -1233,13 +1233,13 @@
        inkscape:connector-curvature="0" />
     <path
        id="path6697"
-       style="fill:none;stroke:#000000;stroke-width:1.06878746;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
-       d="m 993.49338,-1017.5703 230.37092,0"
+       style="fill:none;stroke:#000000;stroke-width:1.12807548;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+       d="m 993.52377,-1017.5993 256.73213,0"
        inkscape:connector-curvature="0" />
     <path
        id="path6699"
-       style="fill:none;stroke:#000000;stroke-width:1.06878746;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
-       d="m 993.49338,-1175.69 230.37092,0"
+       style="fill:none;stroke:#000000;stroke-width:1.12807548;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+       d="m 993.52377,-1175.661 256.73213,0"
        inkscape:connector-curvature="0" />
     <path
        id="path6701"
@@ -1249,12 +1249,12 @@
     <path
        id="path6703"
        style="fill:none;stroke:#000000;stroke-width:1.06878746;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
-       d="m 1223.8643,-1017.5703 0,-158.1197"
+       d="m 1249.8643,-1017.5703 0,-158.1197"
        inkscape:connector-curvature="0" />
     <path
        id="path6705"
-       style="fill:none;stroke:#000000;stroke-width:1.06878746;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
-       d="m 993.49338,-1017.5703 230.37092,0"
+       style="fill:none;stroke:#000000;stroke-width:1.12807548;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+       d="m 993.52377,-1017.5993 256.73213,0"
        inkscape:connector-curvature="0" />
     <path
        id="path6707"
@@ -1263,18 +1263,18 @@
        inkscape:connector-curvature="0" />
     <path
        id="path6711"
-       style="fill:none;stroke:#000000;stroke-width:1.06878746;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
-       d="m 993.49338,-1175.69 230.37092,0"
+       style="fill:none;stroke:#000000;stroke-width:1.12807548;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+       d="m 993.52377,-1175.661 256.73213,0"
        inkscape:connector-curvature="0" />
     <path
        id="path6715"
        style="fill:none;stroke:#000000;stroke-width:1.06878746;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
-       d="m 1223.8643,-1017.5703 0,-158.1197"
+       d="m 1249.8643,-1017.5703 0,-158.1197"
        inkscape:connector-curvature="0" />
     <path
        id="path6709"
-       style="fill:none;stroke:#000000;stroke-width:0.94126558;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
-       d="m 993.49338,-1017.5703 178.67722,0"
+       style="fill:none;stroke:#000000;stroke-width:0.99347967;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+       d="m 993.52377,-1017.5993 199.12323,0"
        inkscape:connector-curvature="0" />
     <path
        id="path6713"
@@ -1307,10 +1307,10 @@
        style="font-size:22.59037399px">
       <tspan
          style="font-size:56.47593689px;font-variant:normal;font-weight:bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold"
-         x="1216.8792 1257.6547 1298.4304"
-         y="-1009.6506"
          sodipodi:role="line"
-         id="tspan6745">DAC</tspan>
+         id="tspan6745"
+         x="1216.8792"
+         y="-1009.6506">MSTS</tspan>
     </text>
     <path
        id="path6755"
@@ -11918,5 +11918,16 @@
        id="image44"
        x="-600.51044"
        y="-388.04077" />
+    <text
+       xml:space="preserve"
+       style="font-size:45.34144592px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:129.99999523%;letter-spacing:0.01313947px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="1126.3706"
+       y="-440.12088"
+       id="text5340"
+       sodipodi:linespacing="130%"><tspan
+         sodipodi:role="line"
+         id="tspan5342"
+         x="1126.3772"
+         y="-440.12088">Time (t, months)</tspan></text>
   </g>
 </svg>
